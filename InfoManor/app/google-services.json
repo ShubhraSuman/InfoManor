@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448562557308",
+    "firebase_url": "https://chipchap-75332.firebaseio.com",
+    "project_id": "chipchap-75332",
+    "storage_bucket": "chipchap-75332.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448562557308:android:c95acdc2264b277f5a34f9",
+        "android_client_info": {
+          "package_name": "com.example.infomanor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448562557308-tle728lic1efrmd837h88cia9j242nct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.infomanor",
+            "certificate_hash": "93ffec291a34d22727bfe7f6ab7ff52d18f030da"
+          }
+        },
+        {
+          "client_id": "448562557308-0vgrloukncrvri0r60kggj34cet4ijqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBehqRD0PIJQB17wXdkoAx3e007f31Mo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448562557308-0vgrloukncrvri0r60kggj34cet4ijqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
