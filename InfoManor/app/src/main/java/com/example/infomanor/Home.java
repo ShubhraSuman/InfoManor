@@ -73,9 +73,9 @@ public class Home extends AppCompatActivity {
         // menu should be considered as top level destinations.
 
         //Set name for user
-          View headerView = navigationView.getHeaderView(0);
-          txtFullName=findViewById(R.id.main_FullName);
-          txtFullName.setText(Common.currentUser.getName());
+          //View headerView = navigationView.getHeaderView(0);
+          //txtFullName=(TextView) findViewById(R.id.main_FullName);
+          //txtFullName.setText(Common.currentUser.getName());
 
          //LoAD Menu with the id that i am not clear
           recycler_menu=findViewById(R.id.recycler_menu);
@@ -99,12 +99,12 @@ public class Home extends AppCompatActivity {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 int menuId = destination.getId();
-                switch (menuId){
+                /*switch (menuId){
                     case R.id.nav_home:
                         Toast.makeText(Home.this,"You tapped home",Toast.LENGTH_SHORT).show();
                         break;
 
-                }
+                }*/
             }
         });
 
