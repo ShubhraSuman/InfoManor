@@ -1,5 +1,6 @@
 package com.example.infomanor;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.infomanor.Common.Common;
@@ -30,6 +31,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +47,8 @@ public class Home extends AppCompatActivity {
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
     private AppBarConfiguration mAppBarConfiguration;
+
+     FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +85,7 @@ public class Home extends AppCompatActivity {
           recycler_menu=findViewById(R.id.recycler_menu);
           recycler_menu.setHasFixedSize(true);
           layoutManager = new LinearLayoutManager(this);
+
           recycler_menu.setLayoutManager(layoutManager);
           loadMenu();
 
@@ -111,7 +116,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void loadMenu() {
-        FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+         adapter= new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder menuViewHolder, Category category, int i) {
                menuViewHolder.txtMenuName.setText(category.getName());
@@ -121,7 +126,11 @@ public class Home extends AppCompatActivity {
                 menuViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Home.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        //Get categoryId and send to new Activity
+                        Intent foodList = new Intent(Home.this,FoodList.class);
+                        foodList.putExtra("categoryId",adapter.getRef(position).getKey());
+                        startActivity(foodList);
 
                     }
                 });
